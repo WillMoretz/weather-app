@@ -8,5 +8,28 @@
     <link rel="stylesheet" href="../src/index.css" />
     <script src="main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="title">Weather</div>
+      <div class="temp-toggle-container">
+        <div class="active-temp"></div>
+        <button class="temp-toggle">Toggle Temp</button>
+      </div>
+    </header>
+    <form>
+      <div class="form-row">
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" />
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <section class="weather-container">
+      <div class="clouds">Cloudy</div>
+      <div class="location">Atlanta</div>
+      <div class="date">Wed Mar 14 2023</div>
+      <div class="temp">32 deg</div>
+      <div class="humidity">Humid af</div>
+      <div class="feel">Feels Colder than that</div>
+    </section>
+  </body>
 </html>
