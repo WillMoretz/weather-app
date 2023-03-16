@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+:root {
+  --header-background: #8bd3dd;
+  --button-background: #f582ae;
+  --body-background: #fef6e4;
+  --dark-text: #001858;
+}
+
+button {
+  background-color: var(--button-background, fuchsia);
+}
+
+header {
+  background-color: var(--header-background, lightblue);
+  display: flex;
+}
+
+header > h1 {
+  margin-right: auto;
+}
+
+.temp-toggle-container {
+  display: flex;
+}
+
+form,
+section {
+  background-color: var(--body-background, beige);
+}
+
+form {
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  text-align: center;
+}
