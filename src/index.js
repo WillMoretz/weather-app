@@ -19,6 +19,16 @@ const display = (() => {
   }
 
   function update(weather) {
+    if (weather.status === "fail") {
+      clouds.textContent = "Invalid Search";
+      location.textContent = "";
+      date.textContent = "";
+      temp.textContent = "";
+      humidity.textContent = "";
+      feel.textContent = "";
+      air.textContent = "";
+      return;
+    }
     clouds.textContent = weather.clouds;
     location.textContent = weather.search;
     date.textContent = new Date().toDateString();
@@ -31,6 +41,22 @@ const display = (() => {
   return { update };
 })();
 
-searchForCurrentWeather("seattle", "imperial").then((response) =>
-  display.update(response)
-);
+function search() {
+  let location = document.querySelector("#location").value;
+  const units = "imperial";
+  // Clean up input a bit
+  while (true) {
+    if (location.charAt(0) === " ") location = location.slice(1);
+    else break;
+  }
+  location = location.replaceAll(" ", "-");
+
+  searchForCurrentWeather(location, units).then((response) =>
+    display.update(response)
+  );
+}
+
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+  search();
+});
