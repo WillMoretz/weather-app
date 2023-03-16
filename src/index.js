@@ -1,5 +1,3 @@
-// "http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid=a05425c7a86ef5f34e2684cd2b822c18"
-
 async function getCoords(search) {
   try {
     const coords = await fetch(
@@ -50,14 +48,14 @@ async function searchForCurrentWeather(search, units) {
   const coords = await getCoords(search);
   if (coords === "coords not found") {
     // Ask for better search
-    return weather;
+    return { status: "fail" };
   }
 
   const results = await Promise.all([
     getCurrentWeather(coords.lat, coords.lon, units),
     getCurrentAirQuality(coords.lat, coords.lon, units),
   ]);
-  Object.assign(weather, results[0], results[1], { search });
+  Object.assign(weather, results[0], results[1], { search, status: "success" });
   return weather;
 }
 
