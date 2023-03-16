@@ -14,9 +14,10 @@
 
 button {
   background-color: var(--button-background, fuchsia);
-  border: none;
   padding: 1em 2em 1em 2em;
+  border: none;
   border-radius: 0.75em;
+  font-weight: 600;
 }
 
 header {
@@ -31,6 +32,7 @@ header > h1 {
   margin-right: auto;
   font-size: 2rem;
   font-weight: 700;
+  text-decoration: underline;
 }
 
 @media (max-width: 40em) {
@@ -54,6 +56,11 @@ header > h1 {
 .active-temp {
   font-size: 1.5rem;
   font-style: italic;
+}
+
+.temp-toggle {
+  border: 3px solid black;
+  font-size: 1.25rem;
 }
 
 form,
