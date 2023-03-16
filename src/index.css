@@ -15,7 +15,7 @@
 button {
   background-color: var(--button-background, fuchsia);
   padding: 1em 2em 1em 2em;
-  border: none;
+  border: 3px solid black;
   border-radius: 0.75em;
   font-weight: 600;
 }
@@ -26,6 +26,7 @@ header {
   flex-wrap: wrap;
   padding: 0.5rem 2rem 0.5rem 10rem;
   align-items: center;
+  border-bottom: 3px double black;
 }
 
 header > h1 {
@@ -59,7 +60,6 @@ header > h1 {
 }
 
 .temp-toggle {
-  border: 3px solid black;
   font-size: 1.25rem;
 }
 
@@ -70,11 +70,23 @@ section {
 
 form {
   text-align: center;
+  padding-top: 1rem;
 }
 
 .form-row {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 1.25rem;
+}
+
+input {
+  max-width: 70ch;
+  border: 3px solid black;
+  margin-bottom: 0.25rem;
 }
 
 section {
