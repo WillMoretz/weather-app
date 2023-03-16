@@ -4,7 +4,6 @@ const tempUnits = (() => {
   let currentUnit = "F";
 
   function toggle() {
-    // eslint-disable-next-line no-unused-expressions
     currentUnit === "F" ? (currentUnit = "C") : (currentUnit = "F");
   }
   function getUnit() {

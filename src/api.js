@@ -6,7 +6,6 @@ async function getCoords(search) {
     const coordsData = await coords.json();
     return { lat: coordsData[0].lat, lon: coordsData[0].lon };
   } catch (error) {
-    console.log(error);
     return "coords not found";
   }
 }
@@ -25,7 +24,6 @@ async function getCurrentWeather(lat, lon, units) {
       country: weatherData.sys.country,
     };
   } catch (error) {
-    console.log(error);
     return "data not found";
   }
 }
@@ -38,7 +36,6 @@ async function getCurrentAirQuality(lat, lon, units) {
     const airData = await currentAir.json();
     return { air: airData.list[0].main.aqi };
   } catch (error) {
-    console.log(error);
     return "data not found";
   }
 }
